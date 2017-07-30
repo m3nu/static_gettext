@@ -37,9 +37,9 @@ class Localizer( object ):
     ESCAPE_RE       = re.compile( r'(\')' )
     BLANKOUT_RE     = re.compile( r'\S' )
 
-    XGETTEXT_CMD    = u'xgettext -L Perl --from-code=utf-8 -o - -'
+    XGETTEXT_CMD    = u'xgettext -L Perl --no-wrap --from-code=utf-8 -o - -'
     MSGUNIQ_CMD     = u'msguniq --to-code=utf-8 "%s"'
-    MSGMERGE_CMD    = u'msgmerge -q "%s" "%s"'
+    MSGMERGE_CMD    = u'msgmerge -q --no-wrap "%s" "%s"'
 
     def __init__( self, domain, inputbase, localebase, outputbase, languages, extensions=None ):
         self.dir        = dir
